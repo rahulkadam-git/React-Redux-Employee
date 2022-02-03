@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import LoginForm from "./loginForm";
 import { useDispatch, useStore } from "react-redux";
-import { loginAction, registerAction } from "../container/actions";
+import { loginAction } from "../container/actions";
 import { useNavigate } from "react-router-dom";
 
 export default function Login() {
@@ -10,7 +10,7 @@ export default function Login() {
   const [errorMessage, setError] = useState("");
 
   const dispatch = useDispatch();
-  const store = useStore();
+  //const store = useStore();
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
@@ -23,7 +23,6 @@ export default function Login() {
     const login = dispatch(loginAction(userCredential));
     login
       .then((data) => {
-        console.log(data);
         navigate("/dashboard");
       })
       .catch((error) => setError(error.err));

@@ -21,7 +21,8 @@ const login = (userCredential) => {
     .post(`${baseURL}/login`, userCredential)
     .then((response) => {
       if (response.data.token) {
-        localStorage.setItem("token-key", response.data.token);
+        localStorage.setItem("user", JSON.stringify(response.data));
+
         return Promise.resolve(response.data);
       }
     })
@@ -33,7 +34,7 @@ const login = (userCredential) => {
 //logout
 
 const logout = () => {
-  localStorage.removeItem("token-key");
+  localStorage.removeItem("user");
   return { msg: "Logout Successfully" };
 };
 

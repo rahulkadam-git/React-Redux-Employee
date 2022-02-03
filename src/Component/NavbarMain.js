@@ -5,7 +5,7 @@ import { useDispatch } from "react-redux";
 
 export default function NavbarMain() {
   const dispatch = useDispatch();
-  const handleLogout = () => {
+  const logout = () => {
     dispatch(logoutAction);
   };
   return (
@@ -13,7 +13,7 @@ export default function NavbarMain() {
       <header>
         <nav className="navbar navbar-dark bg-dark">
           <h3 className="nav-heading">Employee portal</h3>
-          <Logout onLogout={handleLogout} />
+          <Logout onLogout={logout} />
         </nav>
       </header>
     </div>

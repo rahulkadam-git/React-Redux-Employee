@@ -30,6 +30,7 @@ export default function registerForm(props) {
                 <option value="Employee"> Employee</option>
               </select>
             </div>
+
             <div className="userName-box">
               <input
                 type="text"
